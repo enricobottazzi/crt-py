@@ -29,6 +29,7 @@ class CRTInteger:
         return CRTInteger(q, xis)
 
     def from_integer(q: Q, x: int):
+        assert x < q.q, "x should lie in [0, q)"
         xis = []
         for qi in q.qis:
             xis.append(x % qi)
